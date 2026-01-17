@@ -12,8 +12,8 @@ import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT
 import Aurora from "./components/Aurora/Aurora";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import 'aos/dist/aos.css';
+import Services from "./components/Services";
 AOS.init();
 
 function App() {
@@ -122,7 +122,7 @@ function App() {
                 </h2>
 
                 <BlurText
-                  text="I’m Wahyu Setiawan, a Software Developer passionate about building modern web and mobile applications with intuitive user experiences. I enjoy working with the latest technologies in frontend and backend development, blending creativity with precision to deliver impactful solutions. With over three years of experience and multiple completed projects, I’m committed to helping users and businesses grow in the digital era through functional, aesthetic, and scalable digital products."
+                  text="I’m Wahyu Setiawan, a Software Developer passionate about building modern web and mobile applications with intuitive user experiences. I enjoy working with the latest technologies in frontend and backend development, blending creativity with precision to deliver impactful solutions. Currently, I am a Bachelor of Information Systems student at UPN Veteran Jawa Timur. With over three years of experience and multiple completed projects, I’m committed to helping users and businesses grow in the digital era through functional, aesthetic, and scalable digital products."
                   delay={150}
                   animateBy="words"
                   direction="top"
@@ -169,6 +169,10 @@ function App() {
           </div>
 
         </div>
+
+        {/* Layanan / Services */}
+        <Services />
+
         <div className="tools mt-32">
           <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
           <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
@@ -223,8 +227,9 @@ function App() {
 
         {/* Kontak */}
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
+          {/* Header Section */}
           <h1
-            className="text-4xl mb-2 font-bold text-center"
+            className="text-center text-4xl font-bold mb-2"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once="true"
@@ -232,74 +237,139 @@ function App() {
             Contact Me
           </h1>
           <p
-            className="text-base/loose text-center mb-10 opacity-50"
+            className="text-base/loose text-center opacity-50 mb-12"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
             data-aos-once="true"
           >
-            Get in touch with me
+            Have a project in mind or want to collaborate? Feel free to reach out and let's create something amazing together.
           </p>
 
-          {/* Container - Contact Form Only */}
-          <div className="max-w-2xl mx-auto">
-            <form
-              action="https://formsubmit.co/wahyu.setiawan.grow@gmail.com"
-              method="POST"
-              className="bg-zinc-800 p-10 w-full rounded-md"
-              autoComplete="off"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="500"
-              data-aos-once="true"
-            >
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold">Full Name</label>
-                  <input
-                    type="text"
-                    name="Name"
-                    placeholder="Input Name..."
-                    className="border border-zinc-500 p-2 rounded-md"
-                    required
-                  />
+          {/* Two Column Layout */}
+          <div
+            className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+            data-aos-once="true"
+          >
+            {/* Left Column - Contact Info */}
+            <div className="bg-zinc-800/80 backdrop-blur-md p-8 md:p-10 rounded-2xl border border-zinc-700/50 shadow-xl">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                Let's Work Together
+              </h2>
+              <p className="text-zinc-400 mb-8 leading-relaxed">
+                I'm always excited to connect with fellow developers, businesses, and creative minds. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!
+              </p>
+
+              {/* Contact Items */}
+              <div className="space-y-6">
+                {/* Email */}
+                <div className="flex items-center gap-4 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-zinc-400">Email</p>
+                    <a href="mailto:wahyu.setiawan.grow@gmail.com" className="text-white font-medium hover:text-violet-400 transition-colors">
+                      wahyu.setiawan.grow@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold">Email</label>
-                  <input
-                    type="email"
-                    name="Email"
-                    placeholder="Input Email..."
-                    className="border border-zinc-500 p-2 rounded-md"
-                    required
-                  />
+
+                {/* Phone */}
+                <div className="flex items-center gap-4 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-zinc-400">Phone</p>
+                    <a href="tel:+6283834954405" className="text-white font-medium hover:text-emerald-400 transition-colors">
+                      +62 838 3495 4405
+                    </a>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="font-semibold">Message</label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    cols="45"
-                    rows="7"
-                    placeholder="Message..."
-                    className="border border-zinc-500 p-2 rounded-md"
-                    required
-                  ></textarea>
-                </div>
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors"
-                  >
-                    <ShinyText text="Send" disabled={false} speed={3} className="custom-class" />
-                  </button>
+
+                {/* Location */}
+                <div className="flex items-center gap-4 group">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-zinc-400">Location</p>
+                    <p className="text-white font-medium">Surabaya, East Java, Indonesia</p>
+                  </div>
                 </div>
               </div>
-            </form>
+            </div>
+
+            {/* Right Column - Contact Form */}
+            <div className="bg-zinc-800/80 backdrop-blur-md p-8 md:p-10 rounded-2xl border border-zinc-700/50 shadow-xl">
+              <form
+                action="https://formsubmit.co/wahyu.setiawan.grow@gmail.com"
+                method="POST"
+                autoComplete="off"
+              >
+                <div className="flex flex-col gap-5">
+                  {/* Name & Email Row */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <input
+                        type="text"
+                        name="Name"
+                        placeholder="Enter your name"
+                        className="bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
+                        required
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <input
+                        type="email"
+                        name="Email"
+                        placeholder="Enter your email"
+                        className="bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Message */}
+                  <div className="flex flex-col gap-2">
+                    <textarea
+                      name="message"
+                      id="message"
+                      rows="6"
+                      placeholder="Write your message here..."
+                      className="bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300 resize-none"
+                      required
+                    ></textarea>
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-zinc-800 to-zinc-900 hover:from-zinc-700 hover:to-zinc-800 text-white font-semibold p-4 px-8 rounded-xl border border-zinc-600 hover:border-violet-500/50 transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg hover:shadow-violet-500/10"
+                  >
+                    <span>Send Message</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
         {/* Kontak */}
-      </main>
+      </main >
 
       <ProjectModal
         isOpen={!!selectedProject}
