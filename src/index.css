@@ -1,7 +1,24 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Prevent any element from causing horizontal scroll */
+  * {
+    max-width: 100%;
+  }
+
+  /* Fix for canvas/3D elements that might overflow */
+  canvas {
+    max-width: 100% !important;
   }
 }

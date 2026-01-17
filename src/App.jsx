@@ -68,10 +68,10 @@ function App() {
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
-              <img src="./assets/wahyu.png" className="w-10 rounded-md" />
-              <q>Build. Learn. Repeat.</q>
+              <img src="./assets/wahyu2.png" className="w-10 rounded-md" />
+              <q>Build, Learn, Learn and Repeat!</q>
             </div>
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <ShinyText text="Hi I'm Wahyu Setiawan" disabled={false} speed={3} className='custom-class' />
             </h1>
             <BlurText
@@ -81,16 +81,16 @@ function App() {
               direction="top"
               className=" mb-6"
             />
-            <div className="flex items-center sm:gap-4 gap-2">
+            <div className="flex flex-wrap items-center sm:gap-4 gap-2">
               <a
                 href="./assets/CV.pdf"
                 download="Wahyu_Setiawan_CV.pdf"
-                className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
+                className="font-semibold bg-[#1a1a1a] p-3 px-4 sm:p-4 sm:px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors text-sm sm:text-base"
               >
                 <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
               </a>
 
-              <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
+              <a href="#project" className="font-semibold bg-[#1a1a1a] p-3 px-4 sm:p-4 sm:px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors text-sm sm:text-base">
                 <ShinyText text="Explore My Projects" disabled={false} speed={3} className="custom-class" />
               </a>
             </div>
@@ -104,16 +104,17 @@ function App() {
               status="Online"
               contactText="Contact Me"
               avatarUrl="./assets/wahyu.png"
+              miniAvatarUrl="./assets/wahyu1.png"
               showUserInfo={true}
               enableTilt={true}
               enableMobileTilt={false}
-              onContactClick={() => console.log('Contact clicked')}
+              onContactClick={() => window.open('https://wa.me/6283834954405', '_blank')}
             />
           </div>
         </div>
         {/* tentang */}
         <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-2 sm:px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
               {/* Kolom kiri */}
               <div className="flex-1 text-left">
@@ -132,7 +133,7 @@ function App() {
                 <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
                   <div>
                     <h1 className="text-3xl md:text-4xl mb-1">
-                      6<span className="text-violet-500">+</span>
+                      5<span className="text-violet-500">+</span>
                     </h1>
                     <p>Project Finished</p>
                   </div>
@@ -174,8 +175,8 @@ function App() {
         <Services />
 
         <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
+          <p className="w-full sm:w-3/5 md:w-2/5 text-sm sm:text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Professional Skills</p>
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
             {listTools.map((tool) => (
@@ -207,8 +208,8 @@ function App() {
 
         {/* Proyek */}
         <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
-        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
-        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
+        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
+        <p className="text-sm sm:text-base/loose text-center opacity-50 px-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
         <div className="proyek-box mt-14" >
 
           <div style={{ height: 'auto', position: 'relative' }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true" >
@@ -229,7 +230,7 @@ function App() {
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
           {/* Header Section */}
           <h1
-            className="text-center text-4xl font-bold mb-2"
+            className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-2"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once="true"
@@ -237,7 +238,7 @@ function App() {
             Contact Me
           </h1>
           <p
-            className="text-base/loose text-center opacity-50 mb-12"
+            className="text-sm sm:text-base/loose text-center opacity-50 mb-12 px-2"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"

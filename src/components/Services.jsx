@@ -31,8 +31,8 @@ const services = [
 const Services = () => {
     return (
         <div className="services mt-32" id="services">
-            <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">My Services</h1>
-            <p className="text-base/loose text-center opacity-50 mb-14 px-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
+            <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">My Services</h1>
+            <p className="text-sm sm:text-base/loose text-center opacity-50 mb-14 px-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
                 What I offer to help your business grow
             </p>
 

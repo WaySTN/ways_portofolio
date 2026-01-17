@@ -1,5 +1,24 @@
 import { useState, useEffect } from "react";
 
+const NavItem = ({ href, children }) => {
+  return (
+    <li className="relative">
+      <a
+        href={href}
+        className="relative sm:text-base text-sm font-medium px-4 py-2 rounded-full
+                   transition-all duration-300 ease-out
+                   text-zinc-400 hover:text-white
+                   hover:bg-white/10
+                   active:scale-95 active:bg-white/20
+                   border border-transparent md:hover:border-white/10
+                   outline-none"
+      >
+        {children}
+      </a>
+    </li>
+  );
+};
+
 const Navbar = ({ hidden = false }) => {
   // ⛔ Saat hidden, jangan render apa pun
   if (hidden) return null;
@@ -24,18 +43,18 @@ const Navbar = ({ hidden = false }) => {
 
       {/* Menu */}
       <ul
-        className={`flex items-center sm:gap-10 gap-4 
-          md:static fixed left-1/2 -translate-x-1/2 md:translate-x-0 
-          md:opacity-100 bg-white/10 backdrop-blur-md 
-          md:bg-transparent md:backdrop-blur-none
-          p-4 rounded-br-2xl rounded-bl-2xl 
-          transition-all md:transition-none
-          ${active ? "top-0 opacity-100" : "-top-10 opacity-0"}`}
+        className={`flex items-center gap-1 
+            md:static fixed left-1/2 -translate-x-1/2 md:translate-x-0 
+            md:opacity-100 bg-zinc-900/90 backdrop-blur-md 
+            md:bg-transparent md:backdrop-blur-none
+            p-1.5 rounded-full border border-white/5 md:border-transparent
+            transition-all md:transition-none shadow-lg md:shadow-none
+            ${active ? "top-4 opacity-100" : "-top-20 opacity-0"}`}
       >
-        <li><a href="#home" className="sm:text-lg text-base font-medium">Home</a></li>
-        <li><a href="#about" className="sm:text-lg text-base font-medium">About</a></li>
-        <li><a href="#project" className="sm:text-lg text-base font-medium">Project</a></li>
-        <li><a href="#contact" className="sm:text-lg text-base font-medium">Contact</a></li>
+        <NavItem href="#home">Home</NavItem>
+        <NavItem href="#about">About</NavItem>
+        <NavItem href="#project">Project</NavItem>
+        <NavItem href="#contact">Contact</NavItem>
       </ul>
     </nav>
   );
