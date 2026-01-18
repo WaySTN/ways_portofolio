@@ -227,7 +227,7 @@ function App() {
 
 
         {/* Kontak */}
-        <div className="kontak mt-32 sm:p-10 p-0" id="contact">
+        <div className="kontak mt-20 md:mt-32 p-0 sm:p-10" id="contact">
           {/* Header Section */}
           <h1
             className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-2"
@@ -327,7 +327,7 @@ function App() {
                         type="text"
                         name="Name"
                         placeholder="Enter your name"
-                        className="bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
+                        className="w-full bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
                         required
                       />
                     </div>
@@ -336,7 +336,7 @@ function App() {
                         type="email"
                         name="Email"
                         placeholder="Enter your email"
-                        className="bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
+                        className="w-full bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
                         required
                       />
                     </div>
@@ -349,7 +349,7 @@ function App() {
                       id="message"
                       rows="6"
                       placeholder="Write your message here..."
-                      className="bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300 resize-none"
+                      className="w-full bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300 resize-none"
                       required
                     ></textarea>
                   </div>
