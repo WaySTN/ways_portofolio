@@ -1,0 +1,151 @@
+.portfolio-eyebrow {
+  margin-bottom: 14px;
+  color: #a1a1aa;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.portfolio-section-title {
+  color: #fafafa;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+.portfolio-section-description {
+  margin-top: 22px;
+  color: #a1a1aa;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* An open timeline with a continuous thread between roles. */
+.journey-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+  gap: clamp(40px, 7vw, 112px);
+  margin-top: 128px;
+}
+.journey-intro { max-width: 330px; }
+.journey-caption {
+  display: inline-block;
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid #3f3f46;
+  color: #7dd3c0;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+.experience-timeline { margin: 7px 0 0 8px; border-left: 1px solid #3f3f46; }
+.experience-stop { position: relative; padding: 0 0 52px 36px; }
+.experience-stop:last-child { padding-bottom: 0; }
+.experience-dot {
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #7dd3c0;
+  box-shadow: 0 0 0 6px #18181b;
+}
+.experience-stop:last-child .experience-dot { background: #18181b; border: 2px solid #7dd3c0; }
+.experience-period { color: #7dd3c0; font-size: 12px; letter-spacing: 0.04em; }
+.experience-organization { margin-top: 12px; font-size: clamp(19px, 2vw, 24px); font-weight: 600; line-height: 1.45; }
+.experience-role { margin-top: 6px; color: #d4d4d8; font-size: 14px; line-height: 1.7; }
+.experience-location { margin-top: 4px; color: #a1a1aa; font-size: 12px; }
+.experience-description { margin-top: 22px; color: #d4d4d8; font-size: 14px; line-height: 1.85; }
+.experience-contributions { margin-top: 14px; padding-left: 15px; list-style: disc; color: #a1a1aa; font-size: 13px; line-height: 1.9; }
+.experience-contributions li + li { margin-top: 8px; }
+.experience-contributions li::marker { color: #7dd3c0; }
+.experience-technologies { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 23px; color: #a1a1aa; font-size: 11px; }
+.experience-technologies li { padding-bottom: 4px; border-bottom: 1px solid #3f3f46; }
+
+/* The winning project is highlighted; the other awards form a compact list. */
+.honors-section { margin-top: 128px; }
+.honors-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.honors-heading > .portfolio-section-description { max-width: 340px; margin: 0; }
+.honors-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; margin-top: 48px; }
+.honor-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  padding: 30px 34px;
+  border-left: 2px solid #d6b97a;
+  background: linear-gradient(125deg, #d6b97a0e, #d6b97a02);
+}
+.honor-feature-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.honor-label { display: inline-flex; align-items: center; gap: 10px; color: #e4c98f; font-size: 13px; }
+.honor-label svg { width: 20px; height: 20px; }
+.honor-year { color: #a1a1aa; font-size: 12px; }
+.honor-number { display: block; margin: 26px 0; color: #e4c98f; font-size: clamp(80px, 9vw, 126px); font-weight: 500; letter-spacing: -0.08em; line-height: 1; }
+.honor-number > span { margin-left: 9px; color: #b5a789; font-size: 28px; font-weight: 400; letter-spacing: 0; vertical-align: super; }
+.honor-feature-bottom h3 { max-width: 390px; font-size: clamp(20px, 2.1vw, 26px); font-weight: 600; line-height: 1.45; }
+.honor-feature-bottom p { margin-top: 12px; color: #b5a789; font-size: 13px; }
+.honor-recognitions { display: flex; flex-direction: column; }
+.honor-row { display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 28px 0; border-top: 1px solid #3f3f46; }
+.honor-row:last-child { border-bottom: 1px solid #3f3f46; }
+.honor-row-meta { display: flex; justify-content: space-between; gap: 20px; color: #a1a1aa; font-size: 12px; }
+.honor-result { color: #8fc9d4; }
+.honor-row:last-child .honor-result { color: #c8b7db; }
+.honor-row h3 { margin-top: 18px; font-size: clamp(19px, 2vw, 23px); font-weight: 500; line-height: 1.5; }
+.honor-project { margin-top: 14px; color: #a1a1aa; font-size: 13px; }
+
+/* Course subjects are presented as an indexed directory. */
+.learning-section { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: clamp(40px, 7vw, 112px); margin-top: 128px; }
+.learning-intro { max-width: 330px; }
+.learning-total { display: flex; align-items: center; gap: 18px; margin-top: 35px; }
+.learning-total strong { color: #e4e4e7; font-size: 56px; font-weight: 400; letter-spacing: -0.06em; line-height: 1; }
+.learning-total span { color: #a1a1aa; font-size: 11px; line-height: 1.8; }
+.course-directory { border-top: 1px solid #3f3f46; }
+.course-category {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto 32px;
+  align-items: center;
+  gap: 17px;
+  width: 100%;
+  padding: 26px 4px;
+  border-bottom: 1px solid #3f3f46;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+.course-category:hover { background: #ffffff03; }
+.course-category:focus-visible { outline: 2px solid #8fc9d4; outline-offset: 5px; }
+.course-index { align-self: start; padding-top: 4px; color: #71717a; font-size: 11px; font-variant-numeric: tabular-nums; }
+.course-title { display: block; color: #f4f4f5; font-size: 18px; font-weight: 500; line-height: 1.5; }
+.course-summary { display: block; margin-top: 5px; color: #a1a1aa; font-size: 12px; line-height: 1.8; }
+.course-count { color: #a1a1aa; font-size: 11px; white-space: nowrap; }
+.course-arrow { display: flex; align-items: center; justify-content: center; height: 32px; width: 32px; border: 1px solid #52525b; border-radius: 50%; color: #d4d4d8; transition: color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.course-category:hover .course-arrow { transform: translate(2px, -2px); border-color: #8fc9d4; color: #8fc9d4; }
+.training-dialog { border-color: #52525b; box-shadow: 0 24px 100px #0008; }
+.training-dialog-heading { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 24px; border-bottom: 1px solid #3f3f46; background: #18181b; }
+.training-course-list { padding: 8px 24px 24px; }
+.training-course-item { padding: 18px 0; border-bottom: 1px solid #3f3f46; }
+.training-course-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+@media (max-width: 767px) {
+  .journey-section, .learning-section { grid-template-columns: minmax(0, 1fr); gap: 36px; margin-top: 96px; }
+  .journey-intro, .learning-intro { max-width: none; }
+  .journey-caption { margin-top: 22px; }
+  .experience-stop { padding-left: 24px; }
+  .honors-section { margin-top: 96px; }
+  .honors-heading { display: block; }
+  .honors-heading > .portfolio-section-description { margin-top: 20px; max-width: none; }
+  .honors-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 32px; }
+  .honor-feature { min-height: 340px; padding: 25px; }
+  .learning-total { margin-top: 25px; }
+  .course-category { grid-template-columns: 18px minmax(0, 1fr) 30px; gap: 12px; padding: 23px 0; }
+  .course-title { font-size: 16px; }
+  .course-count { grid-column: 2; grid-row: 2; margin-top: -5px; }
+  .course-arrow { grid-column: 3; grid-row: 1 / 3; }
+  .training-dialog-heading { padding: 20px; }
+  .training-course-list { padding: 4px 20px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-category, .course-arrow { transition: none; }
+}

@@ -14,6 +14,9 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Services from "./components/Services";
+import Experience from "./components/Experience";
+import Achievements from "./components/Achievements";
+import Training from "./components/Training";
 AOS.init();
 
 function App() {
@@ -75,7 +78,7 @@ function App() {
               <ShinyText text="Hi I'm Wahyu Setiawan" disabled={false} speed={3} className='custom-class' />
             </h1>
             <BlurText
-              text="A passionate Software Developer specializing in web and mobile development, dedicated to crafting modern, high-performance digital experiences through innovative solutions."
+              text="Software Engineer building web and mobile applications, integrating APIs, and creating practical digital solutions for real users."
               delay={150}
               animateBy="words"
               direction="top"
@@ -83,7 +86,7 @@ function App() {
             />
             <div className="flex flex-wrap items-center sm:gap-4 gap-2">
               <a
-                href="./assets/CV.pdf"
+                href="./assets/CV_Wahyu_Setiawan.pdf"
                 download="Wahyu_Setiawan_CV.pdf"
                 className="font-semibold bg-[#1a1a1a] p-3 px-4 sm:p-4 sm:px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors text-sm sm:text-base"
               >
@@ -99,7 +102,7 @@ function App() {
           <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
             <ProfileCard
               name="Wahyu Setiawan"
-              title="Software Developer"
+              title="Software Engineer"
               handle="wakzuuu"
               status="Online"
               contactText="Contact Me"
@@ -123,7 +126,7 @@ function App() {
                 </h2>
 
                 <BlurText
-                  text="I’m Wahyu Setiawan, a Software Developer passionate about building modern web and mobile applications with intuitive user experiences. I enjoy working with the latest technologies in frontend and backend development, blending creativity with precision to deliver impactful solutions. Currently, I am a Bachelor of Information Systems student at UPN Veteran Jawa Timur. With over three years of experience and multiple completed projects, I’m committed to helping users and businesses grow in the digital era through functional, aesthetic, and scalable digital products."
+                  text="I’m Wahyu Setiawan, a seventh-semester Information Systems student at UPN Veteran Jawa Timur and an aspiring Software Engineer. I build web and mobile applications, work with APIs and databases, and enjoy solving real problems through technology. My experience includes developing a learning platform at FlyHigh and creating digital solutions for village partners through MBKM PMM."
                   delay={150}
                   animateBy="words"
                   direction="top"
@@ -139,9 +142,9 @@ function App() {
                   </div>
                   <div>
                     <h1 className="text-3xl md:text-4xl mb-1">
-                      3<span className="text-violet-500">+</span>
+                      3
                     </h1>
-                    <p>Years of Experience</p>
+                    <p>Achievements</p>
                   </div>
                   <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
                     <h1 className="text-3xl md:text-4xl mb-1">
@@ -170,6 +173,8 @@ function App() {
           </div>
 
         </div>
+
+        <Experience />
 
         {/* Layanan / Services */}
         <Services />
@@ -225,6 +230,9 @@ function App() {
         </div>
         {/* Proyek */}
 
+
+        <Achievements />
+        <Training />
 
         {/* Kontak */}
         <div className="kontak mt-20 md:mt-32 p-0 sm:p-10" id="contact">
