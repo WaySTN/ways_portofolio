@@ -3,6 +3,9 @@ export const experiences = [
     id: "flyhigh",
     role: "Frontend Developer (Full-Stack Contributions)",
     organization: "CV FlyHigh Sinergi Indonesia",
+    logo: "logo/flyhigh.png",
+    logoWidth: 1110,
+    logoHeight: 240,
     period: "Feb - Jun 2026",
     description: "Developed much of the frontend for Akademi FlyHigh, including public pages, user and admin dashboards, and the learning management system.",
     contributions: [
@@ -15,6 +18,9 @@ export const experiences = [
     id: "mbkm-pmm",
     role: "Application Developer",
     organization: "MBKM PMM Kemdiktisaintek",
+    logo: "logo/kemdikti.png",
+    logoWidth: 1024,
+    logoHeight: 396,
     period: "Jun - Oct 2025",
     location: "Kampunganyar Village, Banyuwangi",
     description: "Contributed to the requirements analysis and development of SmartTani and SITANDES Android applications for local agricultural needs.",
@@ -33,6 +39,7 @@ export const achievements = [
     event: "Google Developer Groups Surabaya Hackathon",
     year: "2026",
     project: "LeafGuardTani",
+    certificateUrl: "https://drive.google.com/file/d/1ENyhUgTYBSJDj6nv16DzCgqDz7-V75tC/view?usp=sharing",
   },
   {
     id: "pidi",
@@ -40,6 +47,7 @@ export const achievements = [
     event: "PIDI Hackathon",
     year: "2026",
     project: "NusaTrade",
+    certificateUrl: "https://credsverse.com/credentials/2fa2ff04-f193-4869-881c-f23f5e208c25?preview=1",
   },
   {
     id: "fasilkom-fest",

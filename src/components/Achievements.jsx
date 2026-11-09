@@ -1,4 +1,4 @@
-import { FiAward } from "react-icons/fi";
+import { FiArrowUpRight, FiAward } from "react-icons/fi";
 import { achievements } from "../portfolioData";
 import "./PortfolioSections.css";
 
@@ -23,6 +23,11 @@ export default function Achievements() {
           <div className="honor-feature-bottom">
             <h3>{winner.event}</h3>
             <p>{winner.project}</p>
+            {winner.certificateUrl && (
+              <a className="honor-certificate" href={winner.certificateUrl} target="_blank" rel="noopener noreferrer" aria-label={`View certificate for ${winner.event} (opens in a new tab)`}>
+                View Certificate <FiArrowUpRight aria-hidden="true" />
+              </a>
+            )}
           </div>
         </article>
         <div className="honor-recognitions">
@@ -34,6 +39,11 @@ export default function Achievements() {
               </div>
               <h3>{achievement.event}</h3>
               <p className="honor-project">{achievement.project}</p>
+              {achievement.certificateUrl && (
+                <a className="honor-certificate" href={achievement.certificateUrl} target="_blank" rel="noopener noreferrer" aria-label={`View certificate for ${achievement.event} (opens in a new tab)`}>
+                  View Certificate <FiArrowUpRight aria-hidden="true" />
+                </a>
+              )}
             </article>
           ))}
         </div>

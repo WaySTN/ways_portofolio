@@ -16,9 +16,22 @@ export default function Experience() {
             <span className="experience-dot" aria-hidden="true" />
             <article>
               <p className="experience-period">{experience.period}</p>
-              <h3 className="experience-organization">{experience.organization}</h3>
-              <p className="experience-role">{experience.role}</p>
-              {experience.location && <p className="experience-location">{experience.location}</p>}
+              <div className="experience-identity">
+                <img
+                  className="experience-logo"
+                  src={`${import.meta.env.BASE_URL}${experience.logo}`}
+                  alt=""
+                  width={experience.logoWidth}
+                  height={experience.logoHeight}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="experience-identity-text">
+                  <h3 className="experience-organization">{experience.organization}</h3>
+                  <p className="experience-role">{experience.role}</p>
+                  {experience.location && <p className="experience-location">{experience.location}</p>}
+                </div>
+              </div>
               <p className="experience-description">{experience.description}</p>
               <ul className="experience-contributions">
                 {experience.contributions.map((contribution) => <li key={contribution}>{contribution}</li>)}

@@ -124,9 +124,9 @@
   inset: 0;
   pointer-events: none;
   z-index: 3;
-  backdrop-filter: grayscale(1) brightness(0.78);
-  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
-  background: rgba(0, 0, 0, 0.001);
+  backdrop-filter: grayscale(1);
+  -webkit-backdrop-filter: grayscale(1);
+  background: transparent;
 
   mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
       transparent 0%,
@@ -153,9 +153,9 @@
   inset: 0;
   pointer-events: none;
   z-index: 4;
-  backdrop-filter: grayscale(1) brightness(0.78);
-  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
-  background: rgba(0, 0, 0, 0.001);
+  backdrop-filter: grayscale(1);
+  -webkit-backdrop-filter: grayscale(1);
+  background: transparent;
 
   mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
       white 0%,
