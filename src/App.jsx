@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import ShinyText from "./components/ShinyText/ShinyText";
 import BlurText from "./components/BlurText/BlurText";
@@ -6,7 +6,7 @@ import ScrambledText from "./components/ScrambledText/ScrambledText";
 import SplitText from "./components/SplitText/SplitText";
 import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
-import { listTools, listProyek } from "./data";
+import { listProyek } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT MODAL
 import Aurora from "./components/Aurora/Aurora";
@@ -17,11 +17,12 @@ import Services from "./components/Services";
 import Experience from "./components/Experience";
 import Achievements from "./components/Achievements";
 import Training from "./components/Training";
+import Contact from "./components/Contact";
+import Tools from "./components/Tools";
+import AboutContent from "./components/AboutContent";
 AOS.init();
 
 function App() {
-  const aboutRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   const [selectedProject, setSelectedProject] = useState(null); // null = modal tertutup
 
@@ -36,23 +37,7 @@ function App() {
 
   // Removed reload redirect - no longer needed with base: "/"
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <>
@@ -117,51 +102,9 @@ function App() {
         </div>
         {/* tentang */}
         <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-2 sm:px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-2 sm:px-8">
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
-              {/* Kolom kiri */}
-              <div className="flex-1 text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-                  About Me
-                </h2>
-
-                <BlurText
-                  text="I’m Wahyu Setiawan, a seventh-semester Information Systems student at UPN Veteran Jawa Timur and an aspiring Software Engineer. I build web and mobile applications, work with APIs and databases, and enjoy solving real problems through technology. My experience includes developing a learning platform at FlyHigh and creating digital solutions for village partners through MBKM PMM."
-                  delay={150}
-                  animateBy="words"
-                  direction="top"
-                  className="text-base md:text-lg leading-relaxed mb-10 text-gray-300"
-                />
-
-                <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
-                  <div>
-                    <h1 className="text-3xl md:text-4xl mb-1">
-                      5<span className="text-violet-500">+</span>
-                    </h1>
-                    <p>Project Finished</p>
-                  </div>
-                  <div>
-                    <h1 className="text-3xl md:text-4xl mb-1">
-                      3
-                    </h1>
-                    <p>Achievements</p>
-                  </div>
-                  <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
-                    <h1 className="text-3xl md:text-4xl mb-1">
-                      100<span className="text-violet-500">%</span>
-                    </h1>
-                    <p>Passion</p>
-                  </div>
-                </div>
-
-
-                <ShinyText
-                  text="Working with heart, creating with mind."
-                  disabled={false}
-                  speed={3}
-                  className="text-sm md:text-base text-violet-400"
-                />
-              </div>
+              <AboutContent />
             </div>
 
             {/* Kolom kanan */}
@@ -179,36 +122,7 @@ function App() {
         {/* Layanan / Services */}
         <Services />
 
-        <div className="tools mt-32">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-full sm:w-3/5 md:w-2/5 text-sm sm:text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Professional Skills</p>
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-
-            {listTools.map((tool) => (
-              <div
-                key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true"
-                className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
-              >
-                <img
-                  src={tool.gambar}
-                  alt="Tools Image"
-                  className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
-                />
-                <div className="flex flex-col overflow-hidden">
-                  <div className="truncate">
-                    <ShinyText
-                      text={tool.nama}
-                      disabled={false}
-                      speed={3}
-                      className="text-lg font-semibold block"
-                    />
-                  </div>
-                  <p className="text-sm text-zinc-400 truncate">{tool.ket}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Tools />
         {/* tentang */}
 
         {/* Proyek */}
@@ -231,153 +145,12 @@ function App() {
         {/* Proyek */}
 
 
+        <p className="mt-6 text-center text-sm text-zinc-400">More projects coming soon.</p>
+
         <Achievements />
         <Training />
 
-        {/* Kontak */}
-        <div className="kontak mt-20 md:mt-32 p-0 sm:p-10" id="contact">
-          {/* Header Section */}
-          <h1
-            className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-2"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            Contact Me
-          </h1>
-          <p
-            className="text-sm sm:text-base/loose text-center opacity-50 mb-12 px-2"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-            data-aos-once="true"
-          >
-            Have a project in mind or want to collaborate? Feel free to reach out and let's create something amazing together.
-          </p>
-
-          {/* Two Column Layout */}
-          <div
-            className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-            data-aos-once="true"
-          >
-            {/* Left Column - Contact Info */}
-            <div className="bg-zinc-800/80 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl border border-zinc-700/50 shadow-xl">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                Let's Work Together
-              </h2>
-              <p className="text-zinc-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-                I'm always excited to connect with fellow developers, businesses, and creative minds. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!
-              </p>
-
-              {/* Contact Items */}
-              <div className="space-y-6">
-                {/* Email */}
-                <div className="flex items-center gap-3 sm:gap-4 group">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-all duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-zinc-400">Email</p>
-                    <a href="mailto:wahyu.setiawan.grow@gmail.com" className="text-white font-medium hover:text-violet-400 transition-colors text-sm sm:text-base break-all">
-                      wahyu.setiawan.grow@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-center gap-3 sm:gap-4 group">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-zinc-400">Phone</p>
-                    <a href="tel:+6283834954405" className="text-white font-medium hover:text-emerald-400 transition-colors text-sm sm:text-base">
-                      +62 838 3495 4405
-                    </a>
-                  </div>
-                </div>
-
-                {/* Location */}
-                <div className="flex items-center gap-3 sm:gap-4 group">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40 transition-all duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm text-zinc-400">Location</p>
-                    <p className="text-white font-medium text-sm sm:text-base">Surabaya, East Java, Indonesia</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Contact Form */}
-            <div className="bg-zinc-800/80 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl border border-zinc-700/50 shadow-xl">
-              <form
-                action="https://formsubmit.co/wahyu.setiawan.grow@gmail.com"
-                method="POST"
-                autoComplete="off"
-              >
-                <div className="flex flex-col gap-5">
-                  {/* Name & Email Row */}
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div className="flex flex-col gap-2">
-                      <input
-                        type="text"
-                        name="Name"
-                        placeholder="Enter your name"
-                        className="w-full bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
-                        required
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <input
-                        type="email"
-                        name="Email"
-                        placeholder="Enter your email"
-                        className="w-full bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  {/* Message */}
-                  <div className="flex flex-col gap-2">
-                    <textarea
-                      name="message"
-                      id="message"
-                      rows="6"
-                      placeholder="Write your message here..."
-                      className="w-full bg-zinc-900/80 border border-zinc-600 p-4 rounded-xl text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all duration-300 resize-none"
-                      required
-                    ></textarea>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-zinc-800 to-zinc-900 hover:from-zinc-700 hover:to-zinc-800 text-white font-semibold p-4 px-8 rounded-xl border border-zinc-600 hover:border-violet-500/50 transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg hover:shadow-violet-500/10"
-                  >
-                    <span>Send Message</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                    </svg>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        {/* Kontak */}
+        <Contact />
       </main >
 
       <ProjectModal

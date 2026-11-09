@@ -9,6 +9,11 @@ const PreLoader = () => {
   const [fadeScreen, setFadeScreen] = useState(false)
 
   useEffect(() => {
+    document.documentElement.dataset.portfolioReady = String(!loading)
+    if (!loading) window.dispatchEvent(new Event("portfolio:ready"))
+  }, [loading])
+
+  useEffect(() => {
     if (countDone) {
       // Fade teks
       const fadeTextTimer = setTimeout(() => setFadeText(true), 3000)
@@ -30,6 +35,7 @@ const PreLoader = () => {
   return (
     loading && (
       <div
+        data-portfolio-preloader=""
         className={`w-screen h-screen fixed flex items-center justify-center bg-black z-[10000] overflow-hidden transition-opacity duration-1000 ${
           fadeScreen ? "opacity-0" : "opacity-100"
         }`}

@@ -1,0 +1,32 @@
+﻿.about-copy { min-width: 0; width: 100%; text-align: left; }
+.about-title { position: relative; }
+.about-title-mask { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 3px; }
+.about-title-text { display: inline-block; opacity: 0; transform: translateY(105%); transition: transform 420ms cubic-bezier(.22,1,.36,1), opacity 300ms ease; }
+.about-copy[data-entered="true"] .about-title-text { opacity: 1; transform: translateY(0); }
+.about-introduction { position: relative; margin-bottom: 32px; }
+.about-word-mask { display: inline-block; overflow: hidden; vertical-align: top; }
+.about-word-text { display: block; opacity: 0; transform: translateY(110%); transition: transform 380ms cubic-bezier(.22,1,.36,1), opacity 280ms ease; }
+.about-copy[data-entered="true"] .about-word-text { opacity: 1; transform: translateY(0); transition-delay: var(--word-delay, 90ms); }
+.about-statistics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 22px; }
+.about-statistic { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; opacity: 0; transform: translateY(20px); transition: transform 420ms cubic-bezier(.22,1,.36,1), opacity 320ms ease; }
+.about-statistic[data-active="true"] { opacity: 1; transform: translateY(0); transition-delay: var(--stat-delay); }
+.about-statistic-value { display: flex; align-items: baseline; order: -1; margin: 0 0 6px; color: #fafafa; font-size: clamp(22px, 3.5vw, 36px); font-weight: 400; font-variant-numeric: tabular-nums; line-height: 1.2; white-space: nowrap; }
+.about-counter { display: inline-block; position: relative; }
+.about-counter-size { visibility: hidden; }
+.about-counter-digits { position: absolute; inset: 0; text-align: right; }
+.about-statistic-label { color: #f4f4f5; font-size: clamp(10px, 1.1vw, 14px); line-height: 1.6; }
+.about-motto { opacity: 0; transform: translateY(8px); line-height: 1.8; transition: transform 350ms ease, opacity 350ms ease; }
+.about-motto[data-active="true"] { opacity: 1; transform: translateY(0); transition-delay: 580ms; }
+.about-copy[data-reduced-motion="true"] .about-title-text,
+.about-copy[data-reduced-motion="true"] .about-word-text,
+.about-copy[data-reduced-motion="true"] .about-statistic,
+.about-copy[data-reduced-motion="true"] .about-motto { opacity: 1; transform: none; transition: none; }
+@media (max-width: 639px) {
+  .about-introduction { margin-bottom: 26px; }
+  .about-statistics { gap: 10px; margin-bottom: 20px; }
+  .about-statistic-label { min-height: 3.2em; }
+}
+@media (max-width: 359px) {
+  .about-statistics { gap: 8px; }
+  .about-statistic-value { font-size: 20px; }
+}
