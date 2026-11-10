@@ -199,6 +199,9 @@ import Proyek2 from "/assets/proyek/proyek2.jpg";
 import Proyek3 from "/assets/proyek/proyek3.jpg";
 import Proyek4 from "/assets/proyek/proyek4.jpg";
 import Proyek5 from "/assets/proyek/proyek5.jpg";
+import Proyek6 from "/assets/proyek/proyek6.png";
+import Proyek7 from "/assets/proyek/proyek7.png";
+import Proyek8 from "/assets/proyek/proyek8.png";
 
 export const listProyek = [
   {
@@ -255,5 +258,38 @@ export const listProyek = [
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
     url: "https://github.com/muhrohman/fe_talent_marketplace",
     dad: "500",
+  },
+  {
+    id: 6,
+    image: Proyek6,
+    title: "Akademi FlyHigh",
+    subtitle: "Platform Pembelajaran dan Pelatihan Digital",
+    fullDescription: "Akademi FlyHigh adalah platform pembelajaran digital yang menyediakan halaman program dan sistem pembelajaran untuk peserta. Saya berkontribusi sebagai Frontend Developer dalam pengembangan halaman publik, dashboard pengguna dan admin, serta integrasi REST API untuk fitur learning management system. Proyek ini menggunakan Next.js, Tailwind CSS, Laravel, dan MySQL.",
+    borderColor: "#F97316",
+    gradient: "linear-gradient(145deg, #F97316, #000)",
+    url: null,
+    dad: "600",
+  },
+  {
+    id: 7,
+    image: Proyek7,
+    title: "SiKakao",
+    subtitle: "Sistem Pemantauan Stok dan Fermentasi Kakao",
+    fullDescription: "SiKakao membantu kelompok tani memantau dan mengelola stok biji kakao secara digital. Aplikasi ini mencakup pencatatan stok masuk dan keluar, pemantauan umur fermentasi, pencetakan label gudang, riwayat transaksi, serta pencatatan pre-order. Antarmukanya dirancang agar nyaman digunakan melalui perangkat mobile.",
+    borderColor: "#A76B52",
+    gradient: "linear-gradient(145deg, #A76B52, #000)",
+    url: "https://github.com/WaySTN/stok-coklat-tani",
+    dad: "700",
+  },
+  {
+    id: 8,
+    image: Proyek8,
+    title: "LeafGuard Tani",
+    subtitle: "Analisis Tanaman Padi dan Label Produk Berbasis AI",
+    fullDescription: "LeafGuard Tani adalah progressive web app yang membantu petani menganalisis foto tanaman padi dan memahami label produk pertanian dengan bantuan AI. Aplikasi ini menyediakan analisis tanaman, interpretasi label, analisis gabungan, serta riwayat hasil. Proyek ini meraih juara 1 dalam hackathon Google Developer Groups Surabaya 2026.",
+    borderColor: "#10B981",
+    gradient: "linear-gradient(145deg, #10B981, #000)",
+    url: "https://github.com/WaySTN/LeafGuard-Tani",
+    dad: "800",
   },
 ];

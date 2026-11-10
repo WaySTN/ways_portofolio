@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiX, FiGithub } from 'react-icons/fi'; // Install react-icons jika belum: npm install react-icons
+import { FiX, FiGithub, FiLock } from 'react-icons/fi'; // Install react-icons jika belum: npm install react-icons
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
   // State untuk mengontrol animasi penutupan
@@ -40,7 +40,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
       {/* Modal Content */}
       <div
         onClick={(e) => e.stopPropagation()} // Mencegah modal tertutup saat diklik di dalam
-        className={`bg-zinc-900 border border-violet-500/50 rounded-2xl shadow-2xl shadow-violet-500/20 w-full max-w-lg transform transition-transform duration-300 ${isClosing ? 'animate-out' : 'animate-in'}`}
+        className={`bg-zinc-900 border border-violet-500/50 rounded-2xl shadow-2xl shadow-violet-500/20 w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto transform transition-transform duration-300 ${isClosing ? 'animate-out' : 'animate-in'}`}
       >
         {/* --- GAMBAR PROYEK --- */}
         <img 
@@ -53,7 +53,9 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             <div className="flex justify-between items-start">
                 <h2 className="text-2xl font-bold text-white">{project.title}</h2>
                 <button
+                    type="button"
                     onClick={handleClose}
+                    aria-label="Close project details"
                     className="text-zinc-400 hover:text-white transition-colors p-2 rounded-full hover:bg-zinc-700 -mt-2 -mr-2"
                 >
                     <FiX size={24} />
@@ -65,7 +67,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                 {project.fullDescription}
             </p>
 
-            <a
+            {project.url ? <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -73,7 +75,12 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
             >
                 <FiGithub />
                 <span>Source Code</span>
-            </a>
+            </a> : (
+              <div className="mt-4 inline-flex items-center justify-center gap-2 font-medium bg-zinc-800 text-zinc-300 p-3 px-5 rounded-full w-full border border-zinc-700">
+                <FiLock aria-hidden="true" />
+                <span>Private Repository</span>
+              </div>
+            )}
         </div>
       </div>
        {/* CSS untuk animasi */}

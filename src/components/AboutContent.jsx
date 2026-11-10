@@ -6,7 +6,7 @@ import "./AboutContent.css";
 const introduction = "I’m Wahyu Setiawan, a seventh-semester Information Systems student at UPN Veteran Jawa Timur and an aspiring Software Engineer. I build web and mobile applications, work with APIs and databases, and enjoy solving real problems through technology. My experience includes developing a learning platform at FlyHigh and creating digital solutions for village partners through MBKM PMM.";
 const words = introduction.split(" ");
 const statistics = [
-  { value: 5, suffix: "+", label: "Project Finished" },
+  { value: 8, suffix: "+", label: "Project Finished" },
   { value: 3, suffix: "+", label: "Years of Experience" },
   { value: 100, suffix: "%", label: "Passion" },
 ];
